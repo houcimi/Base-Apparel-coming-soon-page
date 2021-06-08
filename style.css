@@ -17,6 +17,9 @@ body {
     height: calc(100vh - 25px);
     display: flex;
     justify-content: space-between;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: contain;
+    background-repeat: repeat;
 }
 .left {
    padding-left:100px ;
@@ -44,11 +47,59 @@ body {
     line-height: 1.4;
     margin-bottom: 1rem;
 }
-.left input {
-    
+.left .emailfield {
+    border: 1px solid var(--desaturated-red);
+    width: 72%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 7px 35px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.left .emailfield button {
+    padding: 10px 35px;
+    position: absolute;
+    right: -10px;
+    top: -1px;
+    border-radius: 25px;
+    border: none;
+    background-image: linear-gradient(135deg , hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+    cursor: pointer;
+}
+.left .emailfield button.active {
+    background-image: linear-gradient(135deg,hsl(0, 0%, 100%),  hsl(0deg 80% 86%));
+    box-shadow: 5px 15px 15px 2px hsl(0deg 93% 68% / 64%);
+
+}
+.left .emailfield > img {
+    position: absolute;
+    right: 81px;
+    display: none;
+}
+.left .emailfield input {
+    padding: 6px;
+    border: none;
+    outline: none;
+}
+.left .emailfield.actis {
+    border: 2px solid var(--softred);
+}
+.left .emailfield input::placeholder {
+    color: var(--desaturated-red);
+}
+.left span {
+    display: none;
+color: var(--softred);
+margin-left: 35px;
+font-size: 15px;
 }
 .right img {
 height: 100%;
 object-fit: contain;
 }
-
+@media (max-width:767px) {
+    .container {
+        flex-direction: column;
+    }
+}
